@@ -23,8 +23,16 @@ const GET_CHARACTERS = gql`
   }
 `;
 
-export const FetchCharacter = () => {
-  const { error, loading, data } = useQuery(GET_CHARACTERS);
+export const FetchCharacter = (page,search = null) => {
+  const perPage = 20
+  const { error, loading, data } = useQuery(GET_CHARACTERS,{
+    variables:{
+      page,
+      perPage,
+      search
+    }
+  });
+  
   return {
     error,
     loading,
