@@ -4,7 +4,7 @@ import { Col,Card } from 'react-bootstrap'
 export default function CardItem({image,name,id}) {
   return (
     <Col>
-      <Card>
+      <Card className='shadow-sm'>
         <Card.Img variant="top" src={image} className="img" />
         <Card.Body>
           <Card.Title>{name}</Card.Title>

@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import CharactersList from './pages/CharactersList';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
@@ -8,15 +8,15 @@ import Nav from './components/Nav';
 // V.6
 import Create from './pages/Create';
 import Update from './pages/Update';
-import { FetchCharacter } from './function/FetchCharacter';
+import  FetchMedia  from './function/FetchMedia';
+
 
 function App() {
   
   const [page,setPage] = useState(1)
   const [search,setSearch] = useState(null)
-  const {error,data,loading} = FetchCharacter(page,search)
- 
- 
+  const {error,data,loading} = FetchMedia(page,search)
+  
   return (
     <>
      <Nav search={search} setSearch={setSearch} / >

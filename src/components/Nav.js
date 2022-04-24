@@ -3,12 +3,13 @@ import { Navbar, Container, Form, Button, FormControl } from "react-bootstrap";
 
 
 export default function Nav({search,setSearch}) {
-  const [text,setText] = useState(search)
+  const [text,setText] = useState(search ? search : '')
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    setSearch(text)
+    setSearch(text === "" ? null : text)
   }
+  
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -30,7 +31,7 @@ export default function Nav({search,setSearch}) {
               onChange={(e)=>setText(e.target.value)}
               
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" type="submit">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

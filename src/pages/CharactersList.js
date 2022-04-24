@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CardItem from '../components/CardItem'
-import { FetchCharacter } from '../function/FetchCharacter';
 import "./CharacterList.css";
 import { Row } from 'react-bootstrap'
 import Spin from '../components/Spin';
